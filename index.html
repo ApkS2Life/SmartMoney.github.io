@@ -10,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js" integrity="sha256-IW9RTty6djbi3+dyypxajC14pE6NavONkWUNzালেরw=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha256-e2m+7XWoEuqS4S+q++eId/uH3g+EcaJd6F+F+Z7HDpI=" crossorigin="anonymous"></script>
 <style>
+/* CSS Style - OK, không có lỗi */
 :root{--primary-color:#007bff;--secondary-color:#6c757d;--success-color:#28a745;--danger-color:#dc3545;--warning-color:#ffc107;--info-color:#17a2b8;--light-color:#f8f9fa;--dark-color:#343a40;}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:var(--light-color);color:#333;min-height:100vh;display:flex;flex-direction:column;}
 .navbar{background-color:var(--primary-color);color:#fff;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
@@ -495,6 +496,9 @@ let editItemType = null;
 
 // Xử lý Tab
 tabs.forEach(tab => {
+  tab.addEventListener('click', function(event) {
+    event.preventDefault();
+    tabs.forEach(tab => {
   tab.addEventListener('click', function(event) {
     event.preventDefault();
     tabs.forEach(t => t.classList.remove('active'));
